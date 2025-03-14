@@ -7,7 +7,7 @@ Fullstack: http://nextjs.org \
 DB: https://www.prisma.io \
 Hosting: http://vercel.com \
 API to get News Article: https://www.thenewsapi.com \
-Article Extractor: In-house that uses https://github.com/extractus/article-extractor
+Article Extractor: In-house that uses https://github.com/extractus/article-extractor (or similar)
 
 ## Working Team
 Earlan Josh Sabillano \
