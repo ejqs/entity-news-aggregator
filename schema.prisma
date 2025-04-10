@@ -1,0 +1,36 @@
+model Entity {
+    id   String  @id @default(uuid())
+    name String? /// Full Name
+}
+
+model Search {
+    entity_id    Entity    @relation(fields: [id], references: [id])
+    string_query String
+    articles     Article[]
+}
+
+model Article {
+    id                  String   @id @default(uuid())
+    title               String
+    content_description String?
+    content_main_text   String?
+    analysis_id         String
+    analysis            Analysis @relation(fields: [analysis_id], references: [id])
+    created_time        DateTime @default(now())
+}
+
+enum Status {
+    QUEUED
+    QUEUED_UPGRADE
+    INPROGRESS
+    COMPLETE
+}
+
+model Analysis {
+    id               String   @id @default(uuid())
+    status           Status   @default(QUEUED)
+    detected_entites Entity[]
+}
+
+model Entity_Involvement {
+}
